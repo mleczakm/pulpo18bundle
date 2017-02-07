@@ -15,7 +15,7 @@
     }
   ],
   "require": {
-    "steveorevo/platform-installer": "1.*"
+    "steveorevo/platform-installer-plugin": "1.*"
   },
   "extra": {
     "platform-installer": {
