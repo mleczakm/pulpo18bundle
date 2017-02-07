@@ -22,25 +22,25 @@
       "darwin_64": [
         {
           "url": "http://downloads.pulpo18.com/1.1.0.47/Pulpo-1.1.0.47-MacOS-all-64bit.zip",
-          "dir": "."
+          "dir": "pulpo"
         }
       ],
       "win_32": [
         {
           "url": "http://downloads.pulpo18.com/1.1.0.47/Pulpo-1.1.0.47-Windows-all-32bit.zip",
-          "dir": "."
+          "dir": "pulpo"
         }
       ],
       "linux_32": [
         {
           "url": "http://downloads.pulpo18.com/1.1.0.47/Pulpo-1.1.0.47-Linux-all-32bit.zip",
-          "dir": "."
+          "dir": "pulpo"
         }
       ],
       "linux_64": [
         {
           "url": "http://downloads.pulpo18.com/1.1.0.47/Pulpo-1.1.0.47-Linux-all-64bit.zip",
-          "dir": "."
+          "dir": "pulpo"
         }
       ]
     }
