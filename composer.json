@@ -25,7 +25,7 @@
     }
   ],
   "require": {
-    "php"                           : ">=5.4",
+    "php"                           : ">=5.5",
     "symfony/dependency-injection"  : "~2.3|~3.0",
     "symfony/framework-bundle"      : "~2.3|~3.0",
     "mleczakm/platform-based"       : "~0.1",
