@@ -30,7 +30,8 @@ class Pulpo18Command extends ContainerAwareCommand
                 'import-project',
                 'import-project',
                 InputOption::VALUE_REQUIRED,
-                'Project directory'
+                'Project directory',
+                'src' . DIRECTORY_SEPARATOR . 'AppBundle'
             )
             ->addOption(
                 'orm',
@@ -44,26 +45,38 @@ class Pulpo18Command extends ContainerAwareCommand
                 'export-image',
                 InputOption::VALUE_REQUIRED,
                 'Where should the image should be generated',
-                __DIR__
-            )
-        ;
+                'schema.png'
+            );
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        if(!file_exists(__DIR__ . DIRECTORY_SEPARATOR . '..' .DIRECTORY_SEPARATOR . 'pulpo' . DIRECTORY_SEPARATOR . 'Pulpo')){
+        $output->writeln(sprintf(
+            'Started generating schema for %s project in %s directory.',
+            $input->getOption('orm'),
+            $input->getOption('import-project')
+        ));
+
+
+        if (!file_exists(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'pulpo' . DIRECTORY_SEPARATOR . 'Pulpo')) {
+            $output->writeln('Pulpo not found, downloading package.');
+
             $installer = new Installer(new Downloader(new Client()), new UnZipper());
             $installer->installPackage(array(
-                'LINUX' => array('64' => 'http://downloads.pulpo18.com/1.1.0.47/Pulpo-1.1.0.47-Linux-all-64bit.zip')
-            ), __DIR__ . DIRECTORY_SEPARATOR . '..' .DIRECTORY_SEPARATOR . 'pulpo');
+                'linux' => array('64' => 'http://downloads.pulpo18.com/1.1.0.47/Pulpo-1.1.0.47-Linux-all-64bit.zip')
+            ), __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'pulpo');
 
-            exec('chmod +x ' . __DIR__ . DIRECTORY_SEPARATOR . '..' .DIRECTORY_SEPARATOR . 'pulpo' . DIRECTORY_SEPARATOR . 'Pulpo');
+            $output->writeln('Package downloaded, changing file to executable.');
+
+            exec('chmod +x ' . __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'pulpo' . DIRECTORY_SEPARATOR . 'Pulpo');
         }
+
+        $output->writeln(sprintf('Starting generating schema graph for "%s" directory.', $input->getOption('import-project')));
 
         $executor = new Executor();
 
         $executor->execute(
-            __DIR__ . DIRECTORY_SEPARATOR . '..' .DIRECTORY_SEPARATOR . 'pulpo' . DIRECTORY_SEPARATOR . 'Pulpo',
+            __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'pulpo' . DIRECTORY_SEPARATOR . 'Pulpo',
             sprintf(
                 '-import-project %s -orm %s -export-image %s',
                 $input->getOption('import-project'),
@@ -72,6 +85,6 @@ class Pulpo18Command extends ContainerAwareCommand
             )
         );
 
-        $output->writeln('OK');
+        $output->writeln(sprintf('Schema successfully generated into %s.', $input->getOption('export-image')));
     }
 }
