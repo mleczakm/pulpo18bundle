@@ -9,7 +9,7 @@ Installation
 
 ### 1) Download 
 
-`composer require -dev mleczakm/pulpo18bundle`
+`composer require --dev mleczakm/pulpo18bundle`
 
 
 ### 2) Enable Bundle
