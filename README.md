@@ -1,7 +1,6 @@
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/fc826819-275a-419a-a730-180324859f02/big.png)](https://insight.sensiolabs.com/projects/fc826819-275a-419a-a730-180324859f02)
 
 # Pulpo18Bundle
-___
 
 Symfony Bundle to create nice schema images using free [Pulpo 18 Library](http://www.pulpo18.com/).
 
