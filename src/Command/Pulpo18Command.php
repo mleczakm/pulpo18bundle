@@ -9,7 +9,11 @@
 
 namespace mleczakm\Pulpo18Bundle\Command;
 
+use GuzzleHttp\Client;
+use mleczakm\PlatformBased\Downloader;
 use mleczakm\PlatformBased\Executor;
+use mleczakm\PlatformBased\Installer;
+use mleczakm\PlatformBased\UnZipper;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
@@ -47,6 +51,15 @@ class Pulpo18Command extends ContainerAwareCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        if(!file_exists(__DIR__ . DIRECTORY_SEPARATOR . '..' .DIRECTORY_SEPARATOR . 'pulpo' . DIRECTORY_SEPARATOR . 'Pulpo')){
+            $installer = new Installer(new Downloader(new Client()), new UnZipper());
+            $installer->installPackage(array(
+                'LINUX' => array('64' => 'http://downloads.pulpo18.com/1.1.0.47/Pulpo-1.1.0.47-Linux-all-64bit.zip')
+            ), __DIR__ . DIRECTORY_SEPARATOR . '..' .DIRECTORY_SEPARATOR . 'pulpo');
+
+            exec('chmod +x ' . __DIR__ . DIRECTORY_SEPARATOR . '..' .DIRECTORY_SEPARATOR . 'pulpo' . DIRECTORY_SEPARATOR . 'Pulpo');
+        }
+
         $executor = new Executor();
 
         $executor->execute(
