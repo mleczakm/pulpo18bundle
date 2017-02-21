@@ -15,7 +15,7 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class DocCommand extends ContainerAwareCommand
+class Pulpo18Command extends ContainerAwareCommand
 {
     protected function configure()
     {
