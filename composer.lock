@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "dc184272d1c682e6a61d4d2625063e45",
-    "content-hash": "e7a09f057afffa09e88f46e55aca8b00",
+    "hash": "0ff0bd17b0e741c9eacd2742b88c3b7f",
+    "content-hash": "55bc23eb10873bc0b785db0012e538ce",
     "packages": [
         {
             "name": "doctrine/cache",
@@ -257,7 +257,7 @@
         },
         {
             "name": "mleczakm/platform-based",
-            "version": "dev-master",
+            "version": "0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mleczakm/platform-based.git",
@@ -1836,9 +1836,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "mleczakm/platform-based": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

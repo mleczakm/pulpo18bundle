@@ -28,7 +28,7 @@
     "php"                           : ">=5.3.3",
     "symfony/dependency-injection"  : "~2.3|~3.0",
     "symfony/framework-bundle"      : "~2.3|~3.0",
-    "mleczakm/platform-based"       : "dev-master",
+    "mleczakm/platform-based"       : "~0.1",
     "symfony/console": "^2.3 || ^3.0"
   },
   "autoload": {
