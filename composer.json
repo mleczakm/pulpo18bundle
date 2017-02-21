@@ -25,13 +25,18 @@
     }
   ],
   "require": {
-    "php"                           : ">=5.5",
-    "symfony/dependency-injection"  : "~2.3|~3.0",
-    "symfony/framework-bundle"      : "~2.3|~3.0",
-    "mleczakm/platform-based"       : "~0.1",
+    "php": ">=5.5",
+    "symfony/dependency-injection": "~2.3|~3.0",
+    "symfony/framework-bundle": "~2.3|~3.0",
+    "mleczakm/platform-based": "~0.1",
     "symfony/console": "^2.3 || ^3.0"
   },
+  "require-dev": {
+    "phpunit/phpunit": "^5.4"
+  },
   "autoload": {
-    "psr-4": { "mleczakm\\Pulpo18Bundle\\": "src/" }
+    "psr-4": {
+      "mleczakm\\Pulpo18Bundle\\": "src/"
+    }
   }
 }
