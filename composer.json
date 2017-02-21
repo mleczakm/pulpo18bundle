@@ -1,11 +1,15 @@
 {
-  "name": "mleczakm/pulpo18",
+  "name": "mleczakm/pulpo18bundle",
+  "type": "symfony-bundle",
+  "description": "Pulpo18 package",
   "keywords": [
     "doctrine",
     "documentation",
     "uml",
     "schema",
-    "graph"
+    "graph",
+    "symfony",
+    "bundle"
   ],
   "license": "MIT",
   "authors": [
@@ -14,8 +18,21 @@
       "email": "kontakt@michalmleczko.waw.pl"
     }
   ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/mleczakm/platform-based"
+    }
+  ],
   "require": {
-    "steveorevo/platform-installer-plugin": "1.*"
+    "php"                           : ">=5.3.3",
+    "symfony/dependency-injection"  : "~2.3|~3.0",
+    "symfony/framework-bundle"      : "~2.3|~3.0",
+    "mleczakm/platform-based"       : "dev-master",
+    "symfony/console": "^2.3 || ^3.0"
+  },
+  "autoload": {
+    "psr-4": { "mleczakm\\Pulpo18Bundle\\": "src/" }
   },
   "extra": {
     "platform-installer": {
