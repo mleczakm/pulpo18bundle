@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4148d3c9ea9449283b6261703d65eee3",
-    "content-hash": "29e7097b483eeb72b126322e4763be7e",
+    "hash": "dc184272d1c682e6a61d4d2625063e45",
+    "content-hash": "e7a09f057afffa09e88f46e55aca8b00",
     "packages": [
         {
             "name": "doctrine/cache",
@@ -261,12 +261,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mleczakm/platform-based.git",
-                "reference": "dbf2e082abb348e634916ab6ce691b46fab34b13"
+                "reference": "20e2cbbcf74531884892787809af78803750f1f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mleczakm/platform-based/zipball/dbf2e082abb348e634916ab6ce691b46fab34b13",
-                "reference": "dbf2e082abb348e634916ab6ce691b46fab34b13",
+                "url": "https://api.github.com/repos/mleczakm/platform-based/zipball/20e2cbbcf74531884892787809af78803750f1f8",
+                "reference": "20e2cbbcf74531884892787809af78803750f1f8",
                 "shasum": ""
             },
             "require": {
@@ -302,7 +302,7 @@
                 "source": "https://github.com/mleczakm/platform-based/tree/master",
                 "issues": "https://github.com/mleczakm/platform-based/issues"
             },
-            "time": "2017-02-21 20:21:56"
+            "time": "2017-02-21 22:08:35"
         },
         {
             "name": "paragonie/random_compat",
