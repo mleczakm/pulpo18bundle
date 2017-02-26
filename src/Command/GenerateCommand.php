@@ -26,7 +26,7 @@ class GenerateCommand extends ContainerAwareCommand
             ->addArgument(
                 'path',
                 InputArgument::OPTIONAL,
-                'Path to Pulpo binary file. If not exist, Pulpo binary should be under OS path.'
+                'Path to Pulpo. If not exist, Pulpo binary should be accessible under OS path'
             )
             ->addOption(
                 'import-project',
@@ -46,7 +46,7 @@ class GenerateCommand extends ContainerAwareCommand
                 'export-image',
                 'export-image',
                 InputOption::VALUE_REQUIRED,
-                'Where should the image should be generated',
+                'Where should the image should be generated, default root app directory',
                 'schema.png'
             );
     }
@@ -55,7 +55,11 @@ class GenerateCommand extends ContainerAwareCommand
     {
         $executor = new Executor();
 
-        if (($pulpoPath = $input->getArgument('path')) && !file_exists($pulpoPath)) {
+        $pulpoPath = $input->getArgument('path');
+        if ($pulpoPath && is_dir($pulpoPath))
+            $pulpoPath = $pulpoPath . DIRECTORY_SEPARATOR . 'Pulpo';
+
+        if ($pulpoPath  && !file_exists($pulpoPath)) {
             $output->writeln('Pulpo not found under given path. Check if is correct. You can also download Pulpo using pulpo:download command.');
 
             return;
