@@ -1,6 +1,7 @@
 <?php
-use Symfony\Bundle\FrameworkBundle\Console\Application;
+
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
+use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 
 /**
@@ -13,16 +14,14 @@ class Pulpo18CommandTest extends KernelTestCase
 {
     public function testExecute()
     {
-        self::bootKernel();
-        $application = new Application(self::$kernel);
+        $application = new Application();
 
         $application->add(new \mleczakm\Pulpo18Bundle\Command\Pulpo18Command());
 
-        $command = $application->find('app:create-user');
+        $command = $application->find('pulpo');
         $commandTester = new CommandTester($command);
         $commandTester->execute(array(
             'command' => $command->getName(),
-
             // pass arguments to the helper
             '--import-project' => __DIR__,
             '--orm' => 'Doctrine2',

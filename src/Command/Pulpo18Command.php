@@ -57,7 +57,6 @@ class Pulpo18Command extends ContainerAwareCommand
             $input->getOption('import-project')
         ));
 
-
         if (!file_exists(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'pulpo' . DIRECTORY_SEPARATOR . 'Pulpo')) {
             $output->writeln('Pulpo not found, downloading package.');
 
