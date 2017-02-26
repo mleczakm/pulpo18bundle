@@ -16,13 +16,12 @@ class Pulpo18CommandTest extends KernelTestCase
     {
         $application = new Application();
 
-        $application->add(new \mleczakm\Pulpo18Bundle\Command\Pulpo18Command());
+        $application->add(new \mleczakm\Pulpo18Bundle\Command\GenerateCommand());
 
-        $command = $application->find('pulpo');
+        $command = $application->find('pulpo:generate');
         $commandTester = new CommandTester($command);
         $commandTester->execute(array(
             'command' => $command->getName(),
-            // pass arguments to the helper
             '--import-project' => __DIR__,
             '--orm' => 'Doctrine2',
             '--export-image' => __DIR__,
