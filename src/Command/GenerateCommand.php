@@ -61,7 +61,7 @@ class GenerateCommand extends ContainerAwareCommand
             return;
         }
 
-        if (!$pulpoPath && !$executor->commandExist('Pulpo')) {
+        if (!$pulpoPath && ($pulpoPath = 'Pulpo') && !$executor->commandExist($pulpoPath)) {
             $output->writeln('Pulpo not found, please firstly download Pulpo using pulpo:download command.');
 
             return;
@@ -76,7 +76,7 @@ class GenerateCommand extends ContainerAwareCommand
         $output->writeln(sprintf('Starting generating schema graph for "%s" directory.', $input->getOption('import-project')));
 
         $executor->execute(
-            __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'pulpo' . DIRECTORY_SEPARATOR . 'Pulpo',
+            $pulpoPath,
             sprintf(
                 '-import-project %s -orm %s -export-image %s',
                 $input->getOption('import-project'),
