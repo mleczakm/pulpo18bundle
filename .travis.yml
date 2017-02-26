@@ -35,6 +35,4 @@ install:
   - if [[ $SYMFONY_VERSION != "" ]]; then composer require "symfony/framework-bundle:${SYMFONY_VERSION}" "symfony/dependency-injection:${SYMFONY_VERSION}" --no-update -n; composer require "symfony/twig-bundle:${SYMFONY_VERSION}" --no-update -n; fi
   - composer update $COMPOSER_FLAGS --prefer-dist --no-interaction
 
-script: if [[ $COVERAGE = yes ]]; then vendor/bin/phpunit --verbose --coverage-clover=coverage.clover; else vendor/bin/phpunit --verbose; fi
-
-after_script: if [[ $COVERAGE = yes ]]; then wget https://scrutinizer-ci.com/ocular.phar && php ocular.phar code-coverage:upload --format=php-clover coverage.clover; fi
+script: vendor/bin/phpunit --verbose
