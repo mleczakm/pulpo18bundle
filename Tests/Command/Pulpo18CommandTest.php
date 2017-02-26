@@ -1,6 +1,5 @@
 <?php
 
-use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 
@@ -10,7 +9,7 @@ use Symfony\Component\Console\Tester\CommandTester;
  * Date: 21.02.17
  * Time: 22:19
  */
-class Pulpo18CommandTest extends KernelTestCase
+class Pulpo18CommandTest extends \PHPUnit_Framework_TestCase
 {
     public function testExecute()
     {
