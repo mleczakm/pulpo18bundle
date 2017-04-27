@@ -20,8 +20,8 @@
   ],
   "require": {
     "php": ">=5.6",
-    "symfony/dependency-injection": "~2.3|~3.0",
-    "symfony/framework-bundle": "~2.3|~3.0",
+    "symfony/dependency-injection": "~2.3 || ~3.0",
+    "symfony/framework-bundle": "~2.3 || ~3.0",
     "mleczakm/platform-based": "~0.2",
     "symfony/console": "^2.3 || ^3.0"
   },
