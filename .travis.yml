@@ -6,21 +6,22 @@ cache:
   directories:
     - $HOME/.composer/cache/files
 
+php:
+  - 5.6
+  - 7.0
+  - 7.1
+env:
+  - COMPOSER_FLAGS='update --prefer-lowest --prefer-stable' SYMFONY_VERSION=2.7.*
+  - COMPOSER_FLAGS='update --prefer-lowest --prefer-stable' SYMFONY_VERSION=2.8.*
+  - COMPOSER_FLAGS='update --prefer-lowest --prefer-stable' SYMFONY_VERSION=3.0.*
+  - COMPOSER_FLAGS='install' SYMFONY_VERSION=2.7.*
+  - COMPOSER_FLAGS='install' SYMFONY_VERSION=2.8.*
+  - COMPOSER_FLAGS='install' SYMFONY_VERSION=3.0.*
+  - COMPOSER_FLAGS='update' SYMFONY_VERSION=2.7.*
+  - COMPOSER_FLAGS='update' SYMFONY_VERSION=2.8.*
+  - COMPOSER_FLAGS='update' SYMFONY_VERSION=3.0.*
+
 matrix:
-  include:
-    - php: 5.6
-    - php: hhvm
-    - php: nightly
-    - php: 7.0
-      env: COVERAGE=yes
-    - php: 7.0
-      env: COMPOSER_FLAGS='--prefer-lowest --prefer-stable'
-    - php: 7.0
-      env: SYMFONY_VERSION=2.7.*
-    - php: 7.0
-      env: SYMFONY_VERSION=2.8.*
-    - php: 7.0
-      env: SYMFONY_VERSION=3.0.*
   allow_failures:
     - php: hhvm
     - php: nightly
